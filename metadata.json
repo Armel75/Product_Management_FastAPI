@@ -1,0 +1,6 @@
+{
+  "name": "Product Manager",
+  "description": "Full-stack product manager with FastAPI, SQLAlchemy, PostgreSQL, and React + Vite + Axios.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
