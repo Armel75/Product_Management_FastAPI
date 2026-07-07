@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
 from app.routers import auth, users, products
+from app.routers.api import router as api_router
 from app.database import engine, Base
 
 # Attempt auto database table creation for seamless local execution
@@ -29,6 +30,9 @@ app.add_middleware(
 app.include_router(auth.router)
 app.include_router(users.router)
 app.include_router(products.router)
+
+# Compatibility: expose products under /api/products (for reverse proxy setups)
+app.include_router(api_router)
 
 @app.get("/")
 def read_root():
